@@ -2,8 +2,18 @@ const fs = require('fs');
 
 // ENCODINGS:
 // ascii, utf-8, utf-16, hex, binary
-var stream = fs.createReadStream('./video.mp4', 'binary');
+var readStream = fs.createReadStream('./video.mp4');
+var createStream = fs.createWriteStream('./hello.mp4',);
 
-stream.on('data', function (data) {
-    console.log(data.toString());
+var recievedchunk;
+
+readStream.on('chunk', function (chunk) {
+    recievedchunk += chunk;
+
 });
+
+readStream.on('end', function () {
+    createStream.write(recievedchunk);
+});
+
+
