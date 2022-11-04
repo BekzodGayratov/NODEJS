@@ -1,9 +1,9 @@
-const fs = require('js');
+const fs = require('fs');
 
-const chunks = [];
+// ENCODINGS:
+// ascii, utf-8, utf-16, hex, binary
+var stream = fs.createReadStream('./video.mp4', 'binary');
 
-var readStream = fs.readStream();
-
-readStream.on('data',function (chunk){
-    chunks.push(chunk);
+stream.on('data', function (data) {
+    console.log(data.toString());
 });
