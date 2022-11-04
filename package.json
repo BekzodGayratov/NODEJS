@@ -9,6 +9,10 @@
   "author": "Bekzod",
   "license": "ISC",
   "dependencies": {
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "mongoose": "^6.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
